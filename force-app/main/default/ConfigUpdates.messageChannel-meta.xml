@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isExposed>true</isExposed>
+    <masterLabel>ConfigUpdates</masterLabel>
+    <description>Message channel for Config updates between components</description>
+</MessageChannel>

@@ -1,0 +1,46 @@
+<template>
+    <!-- Lightning Card to wrap the available configs list -->
+    <lightning-card title="Available Configs">
+        <div class="slds-p-around_small">
+            <!-- Lightning Datatable to display available configs -->
+            <lightning-datatable
+                key-field="Id"
+                data={configs}
+                columns={columns}
+                selected-rows={selectedConfigIds}
+                onrowselection={handleRowSelection}
+                onsort={handleSort}
+            ></lightning-datatable>
+            <div class="slds-m-top_medium">
+                <!-- Lightning Button to add selected configs to the case -->
+                <lightning-button
+                    label="Add"
+                    variant="brand"
+                    onclick={handleAdd}
+                    disabled={isAddDisabled}
+                ></lightning-button>
+            </div>
+            <!-- Pagination Controls -->
+            <div class="slds-m-top_medium slds-text-align_center">
+                <lightning-button-group>
+                    <!-- Button for navigating to the previous page -->
+                    <lightning-button
+                        label="Previous"
+                        onclick={handlePrevPage}
+                        disabled={isPrevDisabled}
+                    ></lightning-button>
+                    <!-- Button for navigating to the next page -->
+                    <lightning-button
+                        label="Next"
+                        onclick={handleNextPage}
+                        disabled={isNextDisabled}
+                    ></lightning-button>
+                </lightning-button-group>
+                <div class="slds-m-top_x-small">
+                    <!-- Displaying the current page number and total pages -->
+                    Page {currentPage} of {totalPages}
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>
